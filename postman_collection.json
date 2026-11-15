@@ -1,0 +1,281 @@
+{
+  "info": {
+    "name": "UTS - Inventaris Gudang Mini",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Sambutan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": []
+        }
+      }
+    },
+    {
+      "name": "2. Info waktu server",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/info",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "info"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Anggota kelompok",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/anggota",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "anggota"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. Tampilkan semua barang",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang"
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. Tampilkan satu barang",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/3",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "3"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Cari berdasarkan nama",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/cari?nama=lakban",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "cari"
+          ],
+          "query": [
+            {
+              "key": "nama",
+              "value": "lakban"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. Cari berdasarkan kategori",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/cari?kategori=kemasan",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "cari"
+          ],
+          "query": [
+            {
+              "key": "kategori",
+              "value": "kemasan"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "8. Statistik gudang",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/statistik",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "statistik"
+          ]
+        }
+      }
+    },
+    {
+      "name": "9. Tambah barang",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/barang",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nama\": \"Palet Kayu\",\n  \"kategori\": \"Perabot\",\n  \"harga\": 75000,\n  \"stok\": 30\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "10. Ubah barang",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/barang/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "2"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"stok\": 50,\n  \"harga\": 13000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "11. Hapus barang",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "12. Error: barang tidak ada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/barang/99",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang",
+            "99"
+          ]
+        }
+      }
+    },
+    {
+      "name": "13. Error: data tidak valid",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/barang",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "barang"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nama\": \"X\",\n  \"kategori\": \"Y\",\n  \"harga\": \"abc\",\n  \"stok\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "inventaris-gudang",
+  "version": "1.0.0",
+  "description": "Project UTS - Inventaris Gudang Mini (Express)",
+  "main": "Inventaris.js",
+  "scripts": {
+    "start": "node Inventaris.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
